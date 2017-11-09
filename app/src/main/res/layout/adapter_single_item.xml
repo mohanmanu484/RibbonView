@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.mohan.indicator.ribbon.RibbonView
+            android:id="@+id/ribbonView"
+            app:ribbonFillColor="@color/red"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:ems="7"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            tools:text="Book now and Save 30%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@drawable/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:elevation="8dp"
+            android:textColor="@color/white"
+            tools:text="Raj dani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+
+
+
+</android.support.v7.widget.CardView>

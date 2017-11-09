@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RibbonView">
+
+        <attr name="ribbonFillColor" format="color" />
+        <attr name="ribbonStrokeColor" format="color"/>
+        <attr name="ribbonStrokeWidth" format="integer" />
+        <attr name="ribbonArcLength" format="integer" />
+        <!--<attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>-->
+    </declare-styleable>
+
+
+</resources>
