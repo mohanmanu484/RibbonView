@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mohan.indicator.tagview.R;
+import com.mohan.ribbonview.RibbonView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

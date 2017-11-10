@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RibbonView.iml" filepath="$PROJECT_DIR$/RibbonView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RibbonViewSample.iml" filepath="$PROJECT_DIR$/RibbonViewSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbonview/ribbonview.iml" filepath="$PROJECT_DIR$/ribbonview/ribbonview.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.mohan.indicator.ribbon;
+package com.mohan.ribbonview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,8 +9,6 @@ import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-
-import com.mohan.indicator.tagview.R;
 
 /**
  * Created by mohang on 9/11/17.
@@ -60,7 +58,7 @@ public class RibbonView extends AppCompatTextView {
 
                 ribbonFillColor = a.getColor(R.styleable.RibbonView_ribbonFillColor, Color.RED);
                 ribbonStrokeColor = a.getColor(R.styleable.RibbonView_ribbonStrokeColor, Color.YELLOW);
-                strokeWidth = a.getInt(R.styleable.RibbonView_ribbonStrokeWidth, 0);
+                strokeWidth = a.getDimensionPixelSize(R.styleable.RibbonView_ribbonStrokeWidth, 0);
                 arcLength = a.getInt(R.styleable.RibbonView_ribbonArcLength, DEFAULT_ARC_LENGTH);
                 fillPaint.setColor(ribbonFillColor);
                 fillPaint.setStyle(Paint.Style.FILL);

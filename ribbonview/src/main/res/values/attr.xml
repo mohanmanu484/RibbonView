@@ -5,7 +5,7 @@
 
         <attr name="ribbonFillColor" format="color" />
         <attr name="ribbonStrokeColor" format="color"/>
-        <attr name="ribbonStrokeWidth" format="integer" />
+        <attr name="ribbonStrokeWidth" format="dimension" />
         <attr name="ribbonArcLength" format="integer" />
         <!--<attr name="labelPosition" format="enum">
             <enum name="left" value="0"/>

@@ -15,9 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-        <com.mohan.indicator.ribbon.RibbonView
+        <com.mohan.ribbonview.RibbonView
             android:id="@+id/ribbonView"
             app:ribbonFillColor="@color/red"
+            app:ribbonStrokeColor="@color/colorPrimary"
+            app:ribbonStrokeWidth="1dp"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:ems="7"
