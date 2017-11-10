@@ -1,5 +1,5 @@
 # RibbonView
 Ribbon view  sample
 
-![Alt text](/screenshots/sc1.jpg?raw=true "ScreenShot 1")
-![Alt text](/screenshots/sc3.jpg?raw=true "ScreenShot 2")
+![alt text](https://github.com/mohanmanu484/RibbonView/blob/master/screenshots/sc1.png?raw=true "ScreenShot 1")
+![alt text](https://github.com/mohanmanu484/RibbonView/blob/master/screenshots/sc3.png?raw=true "ScreenShot 2")
