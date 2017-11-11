@@ -115,11 +115,13 @@ public class RibbonView extends AppCompatTextView {
 
     public void setRibbonFillColor(int ribbonFillColor) {
         this.ribbonFillColor = ribbonFillColor;
+        fillPaint.setColor(ribbonFillColor);
         invalidate();
     }
 
     public void setRibbonStrokeColor(int ribbonStrokeColor) {
         this.ribbonStrokeColor = ribbonStrokeColor;
+        strokePaint.setColor(ribbonStrokeColor);
         invalidate();
     }
 
