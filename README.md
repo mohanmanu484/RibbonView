@@ -15,7 +15,7 @@ Add it in your root build.gradle at the end of repositories:
 # Step 2.  Add the dependency
 
    	dependencies {
-   		compile 'com.github.mohanmanu484:RibbonView:1.1'
+   		  compile 'com.github.mohanmanu484:RibbonView:1.1'
    	}
 
 ![alt text](https://github.com/mohanmanu484/RibbonView/blob/master/screenshots/sc1.png?raw=true "ScreenShot 1")
