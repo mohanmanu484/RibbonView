@@ -17,7 +17,7 @@ import java.util.List;
  * Created by mohang on 9/11/17.
  */
 
-public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Item> items;
 
@@ -28,7 +28,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_single_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_single_item, parent, false);
 
         return new ItemHolder(view);
     }
@@ -36,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        ((Binder)holder).bind(items.get(position));
+        ((Binder) holder).bind(items.get(position));
     }
 
     @Override
@@ -44,35 +44,39 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return items.size();
     }
 
-    public static class ItemHolder extends RecyclerView.ViewHolder implements Binder{
+    public static class ItemHolder extends RecyclerView.ViewHolder implements Binder {
 
         ImageView imageView;
         TextView name;
         RibbonView ribbonView;
+        RibbonView ribbonView2;
 
 
-         public ItemHolder(View itemView) {
+        public ItemHolder(View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.image);
-            name=itemView.findViewById(R.id.itemName);
-            ribbonView=itemView.findViewById(R.id.ribbonView);
+            imageView = itemView.findViewById(R.id.image);
+            name = itemView.findViewById(R.id.itemName);
+            ribbonView = itemView.findViewById(R.id.ribbonView);
+            ribbonView2 = itemView.findViewById(R.id.ribbonView2);
         }
 
         @Override
         public void bind(Item item) {
 
-             try {
-                 Picasso.with(imageView.getContext()).load(item.getImage()).into(imageView);
-             }catch (Exception e){
+            try {
+                Picasso.with(imageView.getContext()).load(item.getImage()).into(imageView);
+            } catch (Exception e) {
 
-             }
-             name.setText(item.getName());
-             ribbonView.setText(item.getRibbonText());
+            }
+            name.setText(item.getName());
+            ribbonView.setText(item.getRibbonText());
+            ribbonView2.setText(item.getRibbonText());
+
 
         }
     }
 
-    interface Binder{
+    interface Binder {
         void bind(Item item);
     }
 }

@@ -32,6 +32,7 @@ public class RibbonView extends AppCompatTextView {
     private int ribbonStrokeColor = DEFAULT_STROKE_COLOR;
     private int flagWidth;
     private int arcLength;
+    private Gravity gravity=Gravity.RIGHT;
 
 
     public RibbonView(Context context) {
@@ -60,6 +61,7 @@ public class RibbonView extends AppCompatTextView {
                 ribbonStrokeColor = a.getColor(R.styleable.RibbonView_ribbonStrokeColor, Color.YELLOW);
                 strokeWidth = a.getDimensionPixelSize(R.styleable.RibbonView_ribbonStrokeWidth, 0);
                 arcLength = a.getInt(R.styleable.RibbonView_ribbonArcLength, DEFAULT_ARC_LENGTH);
+                gravity=getGravity(a.getInt(R.styleable.RibbonView_ribbonGravity,0));
                 fillPaint.setColor(ribbonFillColor);
                 fillPaint.setStyle(Paint.Style.FILL);
                 strokePaint.setColor(ribbonStrokeColor);
@@ -69,6 +71,10 @@ public class RibbonView extends AppCompatTextView {
                 a.recycle();
             }
         }
+    }
+
+    private Gravity getGravity(int gravity) {
+        return gravity==0?Gravity.LEFT:Gravity.RIGHT;
     }
 
 
@@ -84,18 +90,26 @@ public class RibbonView extends AppCompatTextView {
     protected void onDraw(Canvas canvas) {
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
+        if(gravity==Gravity.LEFT) {
+            canvas.translate(-(flagWidth + DEFAULT_SPACING), 0);
+        }
         drawTagPath(canvas, width, height);
-        drawStrokePath(canvas, width, height);
-        canvas.translate(flagWidth + 5, 0);
+        drawStrokePath(canvas,width,height);
+        canvas.translate( flagWidth, 0);
         super.onDraw(canvas);
     }
 
     private void drawStrokePath(Canvas canvas, int width, int height) {
         strokePath.moveTo(initialPadding, initialPadding);
         strokePath.lineTo(width - initialPadding, initialPadding);
+        if(gravity!=Gravity.RIGHT){
+            strokePath.lineTo(width-flagWidth - initialPadding, (height / 2) + initialPadding);
+        }
         strokePath.lineTo(width - initialPadding, height - initialPadding);
         strokePath.lineTo(initialPadding, height - initialPadding);
-        strokePath.lineTo(flagWidth + initialPadding, (height / 2) + initialPadding);
+        if(gravity!=Gravity.LEFT) {
+            strokePath.lineTo(flagWidth + initialPadding, (height / 2) + initialPadding);
+        }
         strokePath.close();
         if (strokeWidth > 0) {
             canvas.drawPath(strokePath, strokePaint);
@@ -104,10 +118,15 @@ public class RibbonView extends AppCompatTextView {
 
     private void drawTagPath(Canvas canvas, int width, int height) {
         ribbonViewPath.moveTo(0, 0);
-        ribbonViewPath.lineTo(width, 0);
+        ribbonViewPath.lineTo(width, 0 );
+        if(gravity!=Gravity.RIGHT){
+            ribbonViewPath.lineTo(width-flagWidth,height/2);
+        }
         ribbonViewPath.lineTo(width, height);
         ribbonViewPath.lineTo(0, height);
-        ribbonViewPath.lineTo(flagWidth, height / 2);
+        if(gravity!=Gravity.LEFT){
+            ribbonViewPath.lineTo(flagWidth,height/2);
+        }
         ribbonViewPath.close();
         canvas.drawPath(ribbonViewPath, fillPaint);
     }
@@ -127,6 +146,14 @@ public class RibbonView extends AppCompatTextView {
 
     public void setArcLength(int arcLength) {
         this.arcLength = arcLength;
+        invalidate();
+    }
+    public enum Gravity{
+        LEFT,RIGHT
+    }
+
+    public void setGravity(Gravity gravity) {
+        this.gravity = gravity;
         invalidate();
     }
 }

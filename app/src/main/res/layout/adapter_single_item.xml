@@ -19,7 +19,30 @@
             android:id="@+id/ribbonView"
             app:ribbonFillColor="@color/red"
             app:ribbonStrokeColor="@color/white"
+            app:ribbonStrokeWidth="2dp"
+            app:ribbonGravity="left"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:ems="7"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:layout_alignParentLeft="true"
+            tools:text="Book now and Save 30%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <com.mohan.ribbonview.RibbonView
+            android:id="@+id/ribbonView2"
+            app:ribbonFillColor="@color/red"
+            app:ribbonStrokeColor="@color/white"
             app:ribbonStrokeWidth="1dp"
+            app:ribbonGravity="right"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:ems="7"
@@ -37,6 +60,8 @@
             android:background="@drawable/overlay"
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
+
+
 
         <TextView
             android:id="@+id/itemName"

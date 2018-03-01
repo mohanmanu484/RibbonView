@@ -4,9 +4,15 @@
     <declare-styleable name="RibbonView">
 
         <attr name="ribbonFillColor" format="color" />
-        <attr name="ribbonStrokeColor" format="color"/>
+        <attr name="ribbonStrokeColor" format="color" />
         <attr name="ribbonStrokeWidth" format="dimension" />
         <attr name="ribbonArcLength" format="integer" />
+        <attr name="ribbonGravity" format="enum">
+            <enum name="left" value="0"></enum>
+            <enum name="right" value="1"></enum>
+        </attr>
+
+
         <!--<attr name="labelPosition" format="enum">
             <enum name="left" value="0"/>
             <enum name="right" value="1"/>
